@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C4C300019B6E09B00EEAE6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4C2FFF19B6E09B00EEAE6A /* Cocoa.framework */; };
+		7C4C300A19B6E09B00EEAE6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C4C300819B6E09B00EEAE6A /* InfoPlist.strings */; };
+		7C4C300C19B6E09B00EEAE6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C300B19B6E09B00EEAE6A /* main.m */; };
+		7C4C301019B6E09B00EEAE6A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7C4C300E19B6E09B00EEAE6A /* Credits.rtf */; };
+		7C4C301319B6E09B00EEAE6A /* RLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C301219B6E09B00EEAE6A /* RLAppDelegate.m */; };
+		7C4C301619B6E09B00EEAE6A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C4C301419B6E09B00EEAE6A /* MainMenu.xib */; };
+		7C4C301819B6E09B00EEAE6A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C4C301719B6E09B00EEAE6A /* Images.xcassets */; };
+		7C4C301F19B6E09B00EEAE6A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4C301E19B6E09B00EEAE6A /* XCTest.framework */; };
+		7C4C302019B6E09B00EEAE6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4C2FFF19B6E09B00EEAE6A /* Cocoa.framework */; };
+		7C4C302819B6E09B00EEAE6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C4C302619B6E09B00EEAE6A /* InfoPlist.strings */; };
+		7C4C302A19B6E09B00EEAE6A /* RelistenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C302919B6E09B00EEAE6A /* RelistenTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7C4C302119B6E09B00EEAE6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C4C2FF419B6E09B00EEAE6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C4C2FFB19B6E09B00EEAE6A;
+			remoteInfo = Relisten;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7C4C2FFC19B6E09B00EEAE6A /* Relisten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Relisten.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C4C2FFF19B6E09B00EEAE6A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7C4C300219B6E09B00EEAE6A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7C4C300319B6E09B00EEAE6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7C4C300419B6E09B00EEAE6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7C4C300719B6E09B00EEAE6A /* Relisten-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Relisten-Info.plist"; sourceTree = "<group>"; };
+		7C4C300919B6E09B00EEAE6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C4C300B19B6E09B00EEAE6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7C4C300D19B6E09B00EEAE6A /* Relisten-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Relisten-Prefix.pch"; sourceTree = "<group>"; };
+		7C4C300F19B6E09B00EEAE6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7C4C301119B6E09B00EEAE6A /* RLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLAppDelegate.h; sourceTree = "<group>"; };
+		7C4C301219B6E09B00EEAE6A /* RLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLAppDelegate.m; sourceTree = "<group>"; };
+		7C4C301519B6E09B00EEAE6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7C4C301719B6E09B00EEAE6A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7C4C301D19B6E09B00EEAE6A /* RelistenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelistenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C4C301E19B6E09B00EEAE6A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7C4C302519B6E09B00EEAE6A /* RelistenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RelistenTests-Info.plist"; sourceTree = "<group>"; };
+		7C4C302719B6E09B00EEAE6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C4C302919B6E09B00EEAE6A /* RelistenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelistenTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C4C2FF919B6E09B00EEAE6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4C300019B6E09B00EEAE6A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C4C301A19B6E09B00EEAE6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4C302019B6E09B00EEAE6A /* Cocoa.framework in Frameworks */,
+				7C4C301F19B6E09B00EEAE6A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C4C2FF319B6E09B00EEAE6A = {
+			isa = PBXGroup;
+			children = (
+				7C4C300519B6E09B00EEAE6A /* Relisten */,
+				7C4C302319B6E09B00EEAE6A /* RelistenTests */,
+				7C4C2FFE19B6E09B00EEAE6A /* Frameworks */,
+				7C4C2FFD19B6E09B00EEAE6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C4C2FFD19B6E09B00EEAE6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C2FFC19B6E09B00EEAE6A /* Relisten.app */,
+				7C4C301D19B6E09B00EEAE6A /* RelistenTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C4C2FFE19B6E09B00EEAE6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C2FFF19B6E09B00EEAE6A /* Cocoa.framework */,
+				7C4C301E19B6E09B00EEAE6A /* XCTest.framework */,
+				7C4C300119B6E09B00EEAE6A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C4C300119B6E09B00EEAE6A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C300219B6E09B00EEAE6A /* AppKit.framework */,
+				7C4C300319B6E09B00EEAE6A /* CoreData.framework */,
+				7C4C300419B6E09B00EEAE6A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7C4C300519B6E09B00EEAE6A /* Relisten */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C301119B6E09B00EEAE6A /* RLAppDelegate.h */,
+				7C4C301219B6E09B00EEAE6A /* RLAppDelegate.m */,
+				7C4C301419B6E09B00EEAE6A /* MainMenu.xib */,
+				7C4C301719B6E09B00EEAE6A /* Images.xcassets */,
+				7C4C300619B6E09B00EEAE6A /* Supporting Files */,
+			);
+			path = Relisten;
+			sourceTree = "<group>";
+		};
+		7C4C300619B6E09B00EEAE6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C300719B6E09B00EEAE6A /* Relisten-Info.plist */,
+				7C4C300819B6E09B00EEAE6A /* InfoPlist.strings */,
+				7C4C300B19B6E09B00EEAE6A /* main.m */,
+				7C4C300D19B6E09B00EEAE6A /* Relisten-Prefix.pch */,
+				7C4C300E19B6E09B00EEAE6A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C4C302319B6E09B00EEAE6A /* RelistenTests */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C302919B6E09B00EEAE6A /* RelistenTests.m */,
+				7C4C302419B6E09B00EEAE6A /* Supporting Files */,
+			);
+			path = RelistenTests;
+			sourceTree = "<group>";
+		};
+		7C4C302419B6E09B00EEAE6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C4C302519B6E09B00EEAE6A /* RelistenTests-Info.plist */,
+				7C4C302619B6E09B00EEAE6A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C4C2FFB19B6E09B00EEAE6A /* Relisten */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C4C302D19B6E09B00EEAE6A /* Build configuration list for PBXNativeTarget "Relisten" */;
+			buildPhases = (
+				7C4C2FF819B6E09B00EEAE6A /* Sources */,
+				7C4C2FF919B6E09B00EEAE6A /* Frameworks */,
+				7C4C2FFA19B6E09B00EEAE6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Relisten;
+			productName = Relisten;
+			productReference = 7C4C2FFC19B6E09B00EEAE6A /* Relisten.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7C4C301C19B6E09B00EEAE6A /* RelistenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C4C303019B6E09B00EEAE6A /* Build configuration list for PBXNativeTarget "RelistenTests" */;
+			buildPhases = (
+				7C4C301919B6E09B00EEAE6A /* Sources */,
+				7C4C301A19B6E09B00EEAE6A /* Frameworks */,
+				7C4C301B19B6E09B00EEAE6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C4C302219B6E09B00EEAE6A /* PBXTargetDependency */,
+			);
+			name = RelistenTests;
+			productName = RelistenTests;
+			productReference = 7C4C301D19B6E09B00EEAE6A /* RelistenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C4C2FF419B6E09B00EEAE6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Relisten Team";
+				TargetAttributes = {
+					7C4C301C19B6E09B00EEAE6A = {
+						TestTargetID = 7C4C2FFB19B6E09B00EEAE6A;
+					};
+				};
+			};
+			buildConfigurationList = 7C4C2FF719B6E09B00EEAE6A /* Build configuration list for PBXProject "Relisten" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C4C2FF319B6E09B00EEAE6A;
+			productRefGroup = 7C4C2FFD19B6E09B00EEAE6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C4C2FFB19B6E09B00EEAE6A /* Relisten */,
+				7C4C301C19B6E09B00EEAE6A /* RelistenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C4C2FFA19B6E09B00EEAE6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4C300A19B6E09B00EEAE6A /* InfoPlist.strings in Resources */,
+				7C4C301819B6E09B00EEAE6A /* Images.xcassets in Resources */,
+				7C4C301019B6E09B00EEAE6A /* Credits.rtf in Resources */,
+				7C4C301619B6E09B00EEAE6A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C4C301B19B6E09B00EEAE6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4C302819B6E09B00EEAE6A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C4C2FF819B6E09B00EEAE6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4C301319B6E09B00EEAE6A /* RLAppDelegate.m in Sources */,
+				7C4C300C19B6E09B00EEAE6A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C4C301919B6E09B00EEAE6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4C302A19B6E09B00EEAE6A /* RelistenTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7C4C302219B6E09B00EEAE6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C4C2FFB19B6E09B00EEAE6A /* Relisten */;
+			targetProxy = 7C4C302119B6E09B00EEAE6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7C4C300819B6E09B00EEAE6A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C4C300919B6E09B00EEAE6A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7C4C300E19B6E09B00EEAE6A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C4C300F19B6E09B00EEAE6A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7C4C301419B6E09B00EEAE6A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C4C301519B6E09B00EEAE6A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		7C4C302619B6E09B00EEAE6A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C4C302719B6E09B00EEAE6A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C4C302B19B6E09B00EEAE6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7C4C302C19B6E09B00EEAE6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7C4C302E19B6E09B00EEAE6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Relisten/Relisten-Prefix.pch";
+				INFOPLIST_FILE = "Relisten/Relisten-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7C4C302F19B6E09B00EEAE6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Relisten/Relisten-Prefix.pch";
+				INFOPLIST_FILE = "Relisten/Relisten-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7C4C303119B6E09B00EEAE6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Relisten.app/Contents/MacOS/Relisten";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Relisten/Relisten-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RelistenTests/RelistenTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7C4C303219B6E09B00EEAE6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Relisten.app/Contents/MacOS/Relisten";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Relisten/Relisten-Prefix.pch";
+				INFOPLIST_FILE = "RelistenTests/RelistenTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C4C2FF719B6E09B00EEAE6A /* Build configuration list for PBXProject "Relisten" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C4C302B19B6E09B00EEAE6A /* Debug */,
+				7C4C302C19B6E09B00EEAE6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C4C302D19B6E09B00EEAE6A /* Build configuration list for PBXNativeTarget "Relisten" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C4C302E19B6E09B00EEAE6A /* Debug */,
+				7C4C302F19B6E09B00EEAE6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7C4C303019B6E09B00EEAE6A /* Build configuration list for PBXNativeTarget "RelistenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C4C303119B6E09B00EEAE6A /* Debug */,
+				7C4C303219B6E09B00EEAE6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C4C2FF419B6E09B00EEAE6A /* Project object */;
+}
