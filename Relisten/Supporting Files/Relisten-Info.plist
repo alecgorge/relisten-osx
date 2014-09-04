@@ -37,7 +37,7 @@
 		<key>app_name</key>
 		<string>Relisten</string>
 		<key>iguana_api_base</key>
-		<string>http://localhost:9000/api</string>
+		<string>http://iguana.app.alecgorge.com/api</string>
 		<key>site_base</key>
 		<string>http://relisten.net</string>
 		<key>twitter_handle</key>
