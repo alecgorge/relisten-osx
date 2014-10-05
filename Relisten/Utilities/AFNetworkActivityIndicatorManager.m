@@ -10,11 +10,9 @@ static NSURLRequest * AFNetworkRequestFromNotification(NSNotification *notificat
         return [(AFURLConnectionOperation *)[notification object] request];
     }
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     if ([[notification object] respondsToSelector:@selector(originalRequest)]) {
         return [(NSURLSessionTask *)[notification object] originalRequest];
     }
-#endif
     
     return nil;
 }

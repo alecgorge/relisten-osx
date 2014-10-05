@@ -182,7 +182,7 @@ typedef NS_ENUM(NSInteger, RLShowRows) {
         NSTextField *val = [v viewWithTag:2];
 
         if(row == RLShowTaperRow) {
-            key.stringValue = @"Show";
+            key.stringValue = @"Taper";
         }
         else if(row == RLShowTransfererRow) {
             key.stringValue = @"Transferer";

@@ -107,6 +107,8 @@
 		7C4C305219B76F6B00EEAE6A /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
 		7C4C305519B7723A00EEAE6A /* RLYearsTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLYearsTableDataSource.h; sourceTree = "<group>"; };
 		7C4C305619B7723A00EEAE6A /* RLYearsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLYearsTableDataSource.m; sourceTree = "<group>"; };
+		7C52711319C08CC20042696A /* Relisten-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Relisten-Bridging-Header.h"; sourceTree = "<group>"; };
+		7C52711419C08CC20042696A /* RLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLAppDelegate.swift; sourceTree = "<group>"; };
 		ED27F22FA20F49DCBBCA8ACE /* libPods-Relisten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Relisten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,8 @@
 				7C4C303319B74B9400EEAE6A /* API */,
 				7C4C301119B6E09B00EEAE6A /* RLAppDelegate.h */,
 				7C4C301219B6E09B00EEAE6A /* RLAppDelegate.m */,
+				7C52711419C08CC20042696A /* RLAppDelegate.swift */,
+				7C52711319C08CC20042696A /* Relisten-Bridging-Header.h */,
 				7C4C301419B6E09B00EEAE6A /* MainMenu.xib */,
 				7C4C301719B6E09B00EEAE6A /* Images.xcassets */,
 				7C4C300619B6E09B00EEAE6A /* Supporting Files */,
@@ -578,11 +582,15 @@
 			baseConfigurationReference = 055F48102FEF40EAB13A8CC7 /* Pods-Relisten.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Relisten/Supporting Files/Relisten-Prefix.pch";
 				INFOPLIST_FILE = "Relisten/Supporting Files/Relisten-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Relisten/Relisten-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -592,11 +600,14 @@
 			baseConfigurationReference = 055F48102FEF40EAB13A8CC7 /* Pods-Relisten.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Relisten/Supporting Files/Relisten-Prefix.pch";
 				INFOPLIST_FILE = "Relisten/Supporting Files/Relisten-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Relisten/Relisten-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

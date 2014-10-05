@@ -220,11 +220,11 @@
 }
 
 - (float)duration {
-    if(self.currentItem.duration != 0) {
-        return self.currentItem.duration;
+    if(self.audioPlayer.duration != 0) {
+        return self.audioPlayer.duration;
     }
     
-    return self.audioPlayer.duration;
+    return self.currentItem.duration;
 }
 
 - (BOOL)playing {
