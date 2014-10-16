@@ -8,6 +8,8 @@
 
 #import "RLYearTableDataSource.h"
 
+#import "IGDurationHelper.h"
+
 @interface RLYearTableDataSource ()
 
 @property (nonatomic) NSArray *shows;
@@ -72,8 +74,15 @@
 objectValueForTableColumn:(NSTableColumn *)tableColumn
             row:(NSInteger)row {
     IGShow *show = self.shows[row];
-    
-    return show.displayDate;
+	
+	if([tableColumn.identifier isEqualToString:@"year"]) {
+		return show.displayDate;
+	}
+	else {
+		return [IGDurationHelper formattedTimeWithInterval:show.duration];
+	}
+	
+    return @"";
 }
 
 @end

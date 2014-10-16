@@ -25,6 +25,7 @@
 @property (weak) IBOutlet NSTableView *uiShowTable;
 @property (weak) IBOutlet NSView *uiPlaybackControlsView;
 @property (weak) IBOutlet NSPopUpButton *uiSourcesDropdown;
+@property (weak) IBOutlet NSButton *uiSourceInfoButton;
 
 @property (nonatomic, strong) RLYearsTableDataSource *yearsDataSourceDelegate;
 @property (nonatomic, strong) RLYearTableDataSource *showsDataSourceDelegate;
