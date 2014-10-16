@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
     </dependencies>
@@ -18,6 +18,7 @@
                 <outlet property="uiPlaybackControlsView" destination="0Cj-Ed-xw8" id="Gma-j2-5ew"/>
                 <outlet property="uiShowTable" destination="pVJ-DM-hvk" id="rSQ-VZ-eM3"/>
                 <outlet property="uiShowsTable" destination="rGt-ZC-AEh" id="DL4-lZ-2fc"/>
+                <outlet property="uiSourcesDropdown" destination="o6D-oN-zww" id="xKL-s7-JeB"/>
                 <outlet property="uiYearsTable" destination="ATy-xh-ivy" id="V3u-v5-1u5"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -1020,6 +1021,24 @@
                             </popUpButtonCell>
                         </popUpButton>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C6FF7503-E30B-405D-B4AF-D19860C9C4D5" label="Sources" paletteLabel="Sources" visibilityPriority="3" id="mhU-BT-OzB" userLabel="Sources">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="300" height="28"/>
+                        <size key="maxSize" width="300" height="28"/>
+                        <popUpButton key="view" verticalHuggingPriority="750" id="o6D-oN-zww">
+                            <rect key="frame" x="0.0" y="14" width="300" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="YPM-JM-Oiq" id="unc-GQ-mc2" userLabel="Loading sources...">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" title="OtherViews" id="VbA-oJ-UG6">
+                                    <items>
+                                        <menuItem state="on" id="YPM-JM-Oiq" userLabel="Loading sources..."/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                        </popUpButton>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="6rz-bG-ZVQ"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="DLb-TR-xzJ"/>
                     <toolbarItem implicitItemIdentifier="6EBF540B-214C-4125-ACA4-DBB288FBB670" label="Rewind" paletteLabel="Rewind" tag="-1" image="Rewind" selectable="YES" id="Ehj-sH-mEA">
@@ -1052,6 +1071,7 @@
                     <toolbarItem reference="ptp-JM-KG6"/>
                     <toolbarItem reference="6rz-bG-ZVQ"/>
                     <toolbarItem reference="W6W-5Z-y6J"/>
+                    <toolbarItem reference="mhU-BT-OzB"/>
                 </defaultToolbarItems>
             </toolbar>
             <contentBorderThickness minY="66"/>

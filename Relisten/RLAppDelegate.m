@@ -14,6 +14,7 @@
 #import "RLYearTableDataSource.h"
 #import "RLShowTableDataSource.h"
 #import "RLPlaybackManager.h"
+#import "RLSourceDropdownManager.h"
 
 @interface RLAppDelegate ()
 
@@ -23,11 +24,13 @@
 @property (weak) IBOutlet NSTableView *uiShowsTable;
 @property (weak) IBOutlet NSTableView *uiShowTable;
 @property (weak) IBOutlet NSView *uiPlaybackControlsView;
+@property (weak) IBOutlet NSPopUpButton *uiSourcesDropdown;
 
 @property (nonatomic, strong) RLYearsTableDataSource *yearsDataSourceDelegate;
 @property (nonatomic, strong) RLYearTableDataSource *showsDataSourceDelegate;
 @property (nonatomic, strong) RLArtistDropdownManager *artistsManager;
 @property (nonatomic, strong) RLShowTableDataSource *showDataSourceDelegate;
+@property (nonatomic, strong) RLSourceDropdownManager *sourceManager;
 
 @end
 
@@ -52,6 +55,9 @@
     self.showDataSourceDelegate = [RLShowTableDataSource.alloc initWithTableView:self.uiShowTable];
     self.uiShowTable.dataSource = self.showDataSourceDelegate;
     self.uiShowTable.delegate = self.showDataSourceDelegate;
+	
+	self.sourceManager = [RLSourceDropdownManager.alloc initWithPopUpButton:self.uiSourcesDropdown];
+	self.showDataSourceDelegate.sourceManager = self.sourceManager;
     
     RLPlaybackManager *manager = [RLPlaybackManager sharedManagerForView:self.uiPlaybackControlsView];
     [manager.trackStarted.executionSignals subscribeNext:^(RACSignal *mediaItemSignal) {
@@ -73,7 +79,7 @@
     
     [self.showsDataSourceDelegate.showSelected.executionSignals subscribeNext:^(RACSignal *s) {
         [s subscribeNext:^(IGShow *show) {
-            [self.showDataSourceDelegate refreshForShow:show];
+			[self.sourceManager refreshForShow:show];
         }];
     }];
     

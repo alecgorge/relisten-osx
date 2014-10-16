@@ -1,4 +1,4 @@
-# Uncomment this line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git'
 platform :osx, "10.9"
 
 target "Relisten" do
@@ -9,8 +9,3 @@ target "Relisten" do
 	pod 'ReactiveCocoa', '~> 2.3'
 	pod 'StreamingKit', '~> 0.1'
 end
-
-target "RelistenTests" do
-
-end
-

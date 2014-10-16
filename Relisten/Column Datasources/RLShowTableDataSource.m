@@ -12,16 +12,6 @@
 #import "RLPlaybackManager.h"
 #import "IGMediaItem.h"
 
-typedef NS_ENUM(NSInteger, RLShowRows) {
-    RLShowTaperRow = 0,
-    RLShowTransfererRow,
-    RLShowSourceRow,
-    RLShowLineageRow,
-    RLShowRatingRow,
-    RLShowVenueRow,
-    RLShowRowCount,
-};
-
 @interface RLShowTableDataSource ()
 
 @property (nonatomic) NSTableCellView *keyValueRowView;
@@ -52,15 +42,15 @@ typedef NS_ENUM(NSInteger, RLShowRows) {
     return self;
 }
 
-- (void)refreshForShow:(IGShow *)show {
-    [IGAPIClient.sharedInstance showsOn:show.displayDate
-                                success:^(NSArray *recordings) {
-                                    self.recordings = recordings;
-                                    self.selectedRecordingIndex = 0;
-                                    
-                                    [self.tableView reloadData];
-                                }
-                              forArtist:show.artist];
+- (void)setSourceManager:(RLSourceDropdownManager *)sourceManager {
+	_sourceManager = sourceManager;
+	
+	[self.sourceManager.selectedSourceChanged.executionSignals subscribeNext:^(RACSignal *s) {
+		[s subscribeNext:^(IGShow *recording) {
+			self.recordings = @[recording];
+			[self.tableView reloadData];
+		}];
+	}];
 }
 
 - (IGShow *)selectedRecording {
@@ -68,22 +58,14 @@ typedef NS_ENUM(NSInteger, RLShowRows) {
 }
 
 - (IGTrack *)trackForRow:(NSInteger)row {
-    if(row < RLShowRowCount) {
-        return nil;
-    }
-    
     IGShow *recording = self.selectedRecording;
-    IGTrack *track = recording.tracks[row - RLShowRowCount];
+    IGTrack *track = recording.tracks[row];
 
     return track;
 }
 
 - (void)doubleClickRow:(NSTableView *)tableView {
     NSInteger row = tableView.selectedRow;
-    
-    if(row < RLShowRowCount) {
-        return;
-    }
     
     IGTrack *track = [self trackForRow:row];
     
@@ -98,7 +80,7 @@ typedef NS_ENUM(NSInteger, RLShowRows) {
     
     RLPlaybackManager *rlpm = [RLPlaybackManager sharedManagerForView:nil];
     [rlpm replaceQueueWithItems:mediaItems
-                     startIndex:row - RLShowRowCount];
+                     startIndex:row];
     
     [self.trackSelected execute:track];
 }
@@ -106,10 +88,6 @@ typedef NS_ENUM(NSInteger, RLShowRows) {
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
     NSInteger row = [[notification object] selectedRow];
 
-    if(row < RLShowRowCount) {
-        return;
-    }
-    
     IGTrack *track = [self trackForRow:row];
     
     DDLogVerbose(@"track selected: %@", track);
@@ -120,102 +98,29 @@ typedef NS_ENUM(NSInteger, RLShowRows) {
         return 0;
     }
     
-    return self.selectedRecording.tracks.count + RLShowRowCount;
-}
-
-- (NSString *)metadataFromRow:(NSInteger) row {
-    if(row == RLShowTaperRow) {
-        return self.selectedRecording.source;
-    }
-    else if(row == RLShowTransfererRow) {
-        return self.selectedRecording.transferer;
-    }
-    else if(row == RLShowSourceRow) {
-        return self.selectedRecording.source;
-    }
-    else if(row == RLShowLineageRow) {
-        return self.selectedRecording.lineage;
-    }
-    else if(row == RLShowRatingRow) {
-        if(self.selectedRecording.reviewsCount > 0) {
-            return [NSString stringWithFormat:@"%.2f / %@ reviews", self.selectedRecording.averageRating, @(self.selectedRecording.reviewsCount)];
-        }
-    }
-    else if(row == RLShowVenueRow) {
-        return [NSString stringWithFormat:@"%@, %@", self.selectedRecording.venue.name, self.selectedRecording.venue.city];
-    }
-    
-    return @"";
+    return self.selectedRecording.tracks.count;
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    if(row < RLShowRowCount) {
-        self.keyValueRowView.frame = CGRectMake(0, 0, tableView.bounds.size.width, CGFLOAT_MAX);
-        NSString *m = [self metadataFromRow:row];
-        
-        if (!m || m.length == 0) {
-            return 0.01f;
-        }
-        
-        NSTextField *val = [self.keyValueRowView viewWithTag:2];
-        
-        CGRect r = [m boundingRectWithSize:NSMakeSize(val.bounds.size.width, CGFLOAT_MAX)
-                                   options:NSStringDrawingUsesLineFragmentOrigin
-                                attributes:@{ NSFontAttributeName : val.font }];
-        
-        return r.size.height + 20.0f;
-    }
-    
     return 30.0f;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
-    NSView *v = nil;
-    
-    if(row < RLShowRowCount) {
-        v = [tableView makeViewWithIdentifier:@"keyValue"
+    NSView *v = [tableView makeViewWithIdentifier:@"track"
                                         owner:self];
         
-        NSTextField *key = [v viewWithTag:1];
-        NSTextField *val = [v viewWithTag:2];
-
-        if(row == RLShowTaperRow) {
-            key.stringValue = @"Taper";
-        }
-        else if(row == RLShowTransfererRow) {
-            key.stringValue = @"Transferer";
-        }
-        else if(row == RLShowSourceRow) {
-            key.stringValue = @"Source";
-        }
-        else if(row == RLShowLineageRow) {
-            key.stringValue = @"Lineage";
-        }
-        else if(row == RLShowRatingRow) {
-            key.stringValue = @"Rating";
-        }
-        else if(row == RLShowVenueRow) {
-            key.stringValue = @"Venue";
-        }
-        
-        val.stringValue = [self metadataFromRow:row];
-    }
-    else {
-        v = [tableView makeViewWithIdentifier:@"track"
-                                        owner:self];
-        
-        NSTextField *title = [v viewWithTag:1];
-        NSTextField *duration = [v viewWithTag:2];
-        NSTextField *pos = [v viewWithTag:3];
-        
-        IGTrack *track = [self trackForRow:row];
-        
-        pos.stringValue = @(track.track).stringValue;
-        title.stringValue = track.title;
-        duration.stringValue = [IGDurationHelper formattedTimeWithInterval:track.length];
-    }
+	NSTextField *title = [v viewWithTag:1];
+	NSTextField *duration = [v viewWithTag:2];
+	NSTextField *pos = [v viewWithTag:3];
+	
+	IGTrack *track = [self trackForRow:row];
+	
+	pos.stringValue = @(track.track).stringValue;
+	title.stringValue = track.title;
+	duration.stringValue = [IGDurationHelper formattedTimeWithInterval:track.length];
+	
     
     return v;
 }

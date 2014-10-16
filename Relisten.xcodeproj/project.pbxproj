@@ -36,6 +36,7 @@
 		7C4C304F19B7521500EEAE6A /* IGArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C304E19B7521500EEAE6A /* IGArtist.m */; };
 		7C4C305319B76F6B00EEAE6A /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C305219B76F6B00EEAE6A /* AFNetworkActivityIndicatorManager.m */; };
 		7C4C305719B7723A00EEAE6A /* RLYearsTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C305619B7723A00EEAE6A /* RLYearsTableDataSource.m */; };
+		7CE67A4A19F040360035E56D /* RLSourceDropdownManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE67A4919F040360035E56D /* RLSourceDropdownManager.m */; };
 		B9B39FA1CA5B432D85C5A354 /* libPods-Relisten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED27F22FA20F49DCBBCA8ACE /* libPods-Relisten.a */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		055F48102FEF40EAB13A8CC7 /* Pods-Relisten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Relisten.xcconfig"; path = "Pods/Pods-Relisten.xcconfig"; sourceTree = "<group>"; };
 		7C27470519B775800041D3E7 /* RLArtistDropdownManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLArtistDropdownManager.h; sourceTree = "<group>"; };
 		7C27470619B775800041D3E7 /* RLArtistDropdownManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLArtistDropdownManager.m; sourceTree = "<group>"; };
 		7C27470819B77FFE0041D3E7 /* RLYearTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLYearTableDataSource.h; sourceTree = "<group>"; };
@@ -109,6 +109,10 @@
 		7C4C305619B7723A00EEAE6A /* RLYearsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLYearsTableDataSource.m; sourceTree = "<group>"; };
 		7C52711319C08CC20042696A /* Relisten-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Relisten-Bridging-Header.h"; sourceTree = "<group>"; };
 		7C52711419C08CC20042696A /* RLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLAppDelegate.swift; sourceTree = "<group>"; };
+		7CE67A4819F040360035E56D /* RLSourceDropdownManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLSourceDropdownManager.h; sourceTree = "<group>"; };
+		7CE67A4919F040360035E56D /* RLSourceDropdownManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLSourceDropdownManager.m; sourceTree = "<group>"; };
+		BF474B49FB22A80A5D13D255 /* Pods-Relisten.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Relisten.release.xcconfig"; path = "Pods/Target Support Files/Pods-Relisten/Pods-Relisten.release.xcconfig"; sourceTree = "<group>"; };
+		DACD95DDE3101DC99758D3F1 /* Pods-Relisten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Relisten.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Relisten/Pods-Relisten.debug.xcconfig"; sourceTree = "<group>"; };
 		ED27F22FA20F49DCBBCA8ACE /* libPods-Relisten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Relisten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +149,8 @@
 				7C27471519B7BAE30041D3E7 /* AGMediaItem.m */,
 				7C27471919B7C0D50041D3E7 /* IGMediaItem.h */,
 				7C27471A19B7C0D50041D3E7 /* IGMediaItem.m */,
+				7CE67A4819F040360035E56D /* RLSourceDropdownManager.h */,
+				7CE67A4919F040360035E56D /* RLSourceDropdownManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -156,7 +162,7 @@
 				7C4C302319B6E09B00EEAE6A /* RelistenTests */,
 				7C4C2FFE19B6E09B00EEAE6A /* Frameworks */,
 				7C4C2FFD19B6E09B00EEAE6A /* Products */,
-				055F48102FEF40EAB13A8CC7 /* Pods-Relisten.xcconfig */,
+				9D6BC5B525AE9980E345B524 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,6 +302,15 @@
 			path = "Column Datasources";
 			sourceTree = "<group>";
 		};
+		9D6BC5B525AE9980E345B524 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DACD95DDE3101DC99758D3F1 /* Pods-Relisten.debug.xcconfig */,
+				BF474B49FB22A80A5D13D255 /* Pods-Relisten.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -420,7 +435,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Relisten-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Relisten/Pods-Relisten-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -447,6 +462,7 @@
 				7C4C304919B74C5700EEAE6A /* IGThirdPartyKeys.m in Sources */,
 				7C4C301319B6E09B00EEAE6A /* RLAppDelegate.m in Sources */,
 				7C4C304719B74C5700EEAE6A /* IGYear.m in Sources */,
+				7CE67A4A19F040360035E56D /* RLSourceDropdownManager.m in Sources */,
 				7C4C300C19B6E09B00EEAE6A /* main.m in Sources */,
 				7C27471619B7BAE30041D3E7 /* AGMediaItem.m in Sources */,
 				7C27471B19B7C0D50041D3E7 /* IGMediaItem.m in Sources */,
@@ -579,7 +595,7 @@
 		};
 		7C4C302E19B6E09B00EEAE6A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 055F48102FEF40EAB13A8CC7 /* Pods-Relisten.xcconfig */;
+			baseConfigurationReference = DACD95DDE3101DC99758D3F1 /* Pods-Relisten.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -597,7 +613,7 @@
 		};
 		7C4C302F19B6E09B00EEAE6A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 055F48102FEF40EAB13A8CC7 /* Pods-Relisten.xcconfig */;
+			baseConfigurationReference = BF474B49FB22A80A5D13D255 /* Pods-Relisten.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
