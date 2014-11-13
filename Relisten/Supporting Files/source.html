@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <style>
+            html, body {
+                font: 12px/16px "Helvetica Neue", Helvetica;
+                background: transparent;
+            }
+
+            tr td {
+                padding: 3px 0;
+                font-size: 12px;
+            }
+
+            tr td:first-child {
+                font-size: 10px;
+                color: gray;
+                vertical-align: middle;
+                text-align: right;
+                width: 100px;
+                padding-right: 7px;
+            }
+
+            #reviews, #reviews li {
+                list-style:none;
+                margin: 0;
+                padding: 0;
+            }
+
+            #reviews li {
+                margin-bottom: 10px;
+            }
+
+            h4 {
+                margin-bottom: 0;
+            }
+
+            h5 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tbody border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td>TAPER</td>
+                    <td>%@</td>
+                </tr>
+                <tr>
+                    <td>TRANSFERRER</td>
+                    <td>%@</td>
+                </tr>
+                <tr>
+                    <td>SOURCE</td>
+                    <td>%@</td>
+                </tr>
+                <tr>
+                    <td>LINEAGE</td>
+                    <td>%@</td>
+                </tr>
+                <tr>
+                    <td>RATING</td>
+                    <td>%.2f — %d reviews</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>%@</p>
+        <h3>Reviews</h3>
+        <ul id="reviews">
+        %@
+        </ul>
+    </body>
+</html>

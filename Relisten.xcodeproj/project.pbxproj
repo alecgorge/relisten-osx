@@ -14,6 +14,7 @@
 		7C27471319B7B18B0041D3E7 /* RLPlaybackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27471219B7B18B0041D3E7 /* RLPlaybackManager.m */; };
 		7C27471619B7BAE30041D3E7 /* AGMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27471519B7BAE30041D3E7 /* AGMediaItem.m */; };
 		7C27471B19B7C0D50041D3E7 /* IGMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27471A19B7C0D50041D3E7 /* IGMediaItem.m */; };
+		7C2C44451A155E9700CCF20C /* source.html in Resources */ = {isa = PBXBuildFile; fileRef = 7C2C44441A155E9700CCF20C /* source.html */; };
 		7C4C300019B6E09B00EEAE6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4C2FFF19B6E09B00EEAE6A /* Cocoa.framework */; };
 		7C4C300A19B6E09B00EEAE6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C4C300819B6E09B00EEAE6A /* InfoPlist.strings */; };
 		7C4C300C19B6E09B00EEAE6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C300B19B6E09B00EEAE6A /* main.m */; };
@@ -66,6 +67,7 @@
 		7C27471719B7BB050041D3E7 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
 		7C27471919B7C0D50041D3E7 /* IGMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGMediaItem.h; sourceTree = "<group>"; };
 		7C27471A19B7C0D50041D3E7 /* IGMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGMediaItem.m; sourceTree = "<group>"; };
+		7C2C44441A155E9700CCF20C /* source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = source.html; path = "Supporting Files/source.html"; sourceTree = "<group>"; };
 		7C4C2FFC19B6E09B00EEAE6A /* Relisten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Relisten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4C2FFF19B6E09B00EEAE6A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7C4C300219B6E09B00EEAE6A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -108,7 +110,6 @@
 		7C4C305519B7723A00EEAE6A /* RLYearsTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLYearsTableDataSource.h; sourceTree = "<group>"; };
 		7C4C305619B7723A00EEAE6A /* RLYearsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLYearsTableDataSource.m; sourceTree = "<group>"; };
 		7C52711319C08CC20042696A /* Relisten-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Relisten-Bridging-Header.h"; sourceTree = "<group>"; };
-		7C52711419C08CC20042696A /* RLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLAppDelegate.swift; sourceTree = "<group>"; };
 		7CE67A4819F040360035E56D /* RLSourceDropdownManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLSourceDropdownManager.h; sourceTree = "<group>"; };
 		7CE67A4919F040360035E56D /* RLSourceDropdownManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLSourceDropdownManager.m; sourceTree = "<group>"; };
 		BF474B49FB22A80A5D13D255 /* Pods-Relisten.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Relisten.release.xcconfig"; path = "Pods/Target Support Files/Pods-Relisten/Pods-Relisten.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,11 +207,11 @@
 				7C4C303319B74B9400EEAE6A /* API */,
 				7C4C301119B6E09B00EEAE6A /* RLAppDelegate.h */,
 				7C4C301219B6E09B00EEAE6A /* RLAppDelegate.m */,
-				7C52711419C08CC20042696A /* RLAppDelegate.swift */,
 				7C52711319C08CC20042696A /* Relisten-Bridging-Header.h */,
 				7C4C301419B6E09B00EEAE6A /* MainMenu.xib */,
 				7C4C301719B6E09B00EEAE6A /* Images.xcassets */,
 				7C4C300619B6E09B00EEAE6A /* Supporting Files */,
+				7C2C44441A155E9700CCF20C /* source.html */,
 			);
 			path = Relisten;
 			sourceTree = "<group>";
@@ -392,6 +393,7 @@
 			files = (
 				7C4C300A19B6E09B00EEAE6A /* InfoPlist.strings in Resources */,
 				7C4C301819B6E09B00EEAE6A /* Images.xcassets in Resources */,
+				7C2C44451A155E9700CCF20C /* source.html in Resources */,
 				7C4C301019B6E09B00EEAE6A /* Credits.rtf in Resources */,
 				7C4C301619B6E09B00EEAE6A /* MainMenu.xib in Resources */,
 			);

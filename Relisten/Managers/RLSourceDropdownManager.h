@@ -14,6 +14,7 @@
 
 @property (nonatomic) NSPopUpButton *popUpButton;
 @property (nonatomic) RACCommand *selectedSourceChanged;
+@property (nonatomic) IGShow *currentSource;
 
 - (instancetype)initWithPopUpButton:(NSPopUpButton *)popCell;
 - (void)refreshForShow:(IGShow *)show;

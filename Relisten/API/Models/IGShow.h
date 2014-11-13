@@ -45,11 +45,13 @@
 @property (nonatomic, strong) NSString<Optional> *source;
 @property (nonatomic, strong) NSString<Optional> *lineage;
 @property (nonatomic, strong) NSString<Optional> *taper;
-@property (nonatomic, strong) NSString<Optional> *description;
+@property (nonatomic, strong) NSString<Optional> *igDescription;
 
 @property (nonatomic, strong) NSArray<Optional, ConvertOnDemand, IGShowReview> *reviews;
 @property (nonatomic, strong) NSNumber<Optional> *trackCount;
 
 @property (nonatomic, strong) NSArray<Optional, IGTrack> *tracks;
+
+@property (nonatomic, readonly) NSString *htmlSummary;
 
 @end

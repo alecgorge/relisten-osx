@@ -16,6 +16,8 @@
 #import "RLPlaybackManager.h"
 #import "RLSourceDropdownManager.h"
 
+#import <WebKit/WebKit.h>
+
 @interface RLAppDelegate ()
 
 @property (weak) IBOutlet NSProgressIndicator *uiLoadingIndicator;
@@ -94,6 +96,26 @@
     }];
 
     [self.artistsManager refresh];
+}
+
+- (IBAction)viewSourceInfo:(NSButton *)sender {
+    NSPopover *popover = NSPopover.alloc.init;
+    NSViewController *vc = NSViewController.alloc.init;
+    vc.view = [NSView.alloc initWithFrame:NSMakeRect(0, 0, 500, 250)];
+    
+    WebView *v = [WebView.alloc initWithFrame:vc.view.bounds];
+    [v.mainFrame loadHTMLString:self.sourceManager.currentSource.htmlSummary
+                        baseURL:[NSURL URLWithString:@"http://relisten.net"]];
+    
+    [vc.view addSubview:v];
+    
+    popover.behavior = NSPopoverBehaviorTransient;
+    popover.contentSize = NSMakeSize(500, 250);
+    popover.contentViewController = vc;
+    popover.animates = YES;
+    [popover showRelativeToRect:NSZeroRect
+                         ofView:sender
+                  preferredEdge:NSMaxYEdge];
 }
 
 @end

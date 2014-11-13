@@ -35,6 +35,8 @@
 	
 	_popUpButton.rac_command = [RACCommand.alloc initWithSignalBlock:^RACSignal *(id input) {
 		IGShow *show = self.sources[_popUpButton.indexOfSelectedItem];
+        
+        self.currentSource = show;
 		
 		DDLogVerbose(@"changed source: %@", show);
 		
