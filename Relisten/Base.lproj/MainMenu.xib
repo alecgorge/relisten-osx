@@ -775,6 +775,14 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button identifier="queue" id="ReK-S4-qTJ">
+                                <rect key="frame" x="689" y="20" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Playlist" imagePosition="only" alignment="center" inset="2" id="WjW-me-eY1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </customView>
                     <splitView dividerStyle="thin" vertical="YES" id="oie-7t-2S4">
@@ -1133,6 +1141,7 @@
         <image name="Forward" width="23" height="18"/>
         <image name="Pause" width="10" height="16"/>
         <image name="Play" width="16" height="18"/>
+        <image name="Playlist" width="20" height="14"/>
         <image name="Rewind" width="23" height="18"/>
     </resources>
 </document>

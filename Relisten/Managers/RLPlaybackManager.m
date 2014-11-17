@@ -11,6 +11,7 @@
 #import <StreamingKit/STKAutoRecoveringHTTPDataSource.h>
 
 #import "IGDurationHelper.h"
+#import "RLQueueViewController.h"
 
 @interface RLPlaybackManager ()
 
@@ -30,6 +31,8 @@
 
 @property (nonatomic, readonly) NSSlider *uiProgressSlider;
 @property (nonatomic, readonly) NSSlider *uiVolumeSlider;
+
+@property (nonatomic, readonly) NSButton *uiQueueButton;
 
 @end
 
@@ -122,12 +125,30 @@
     return (NSSlider *)[self viewWithIdentifier:@"volumeSlider"];
 }
 
+- (NSButton *)uiQueueButton {
+    return (NSButton *)[self viewWithIdentifier:@"queue"];
+}
+
 - (void)uiProgressChangeRequested:(NSSlider *)sender {
     self.progress = sender.floatValue;
 }
 
 - (void)uiVolumeChangeRequested:(NSSlider *)sender {
     self.audioPlayer.volume = sender.floatValue;
+}
+
+- (void)uiOpenQueue:(NSButton *)sender {
+    NSPopover *popover = NSPopover.alloc.init;
+    NSViewController *vc = [RLQueueViewController.alloc init];
+    
+    popover.behavior = NSPopoverBehaviorTransient;
+    popover.contentSize = NSMakeSize(300, 250);
+    popover.contentViewController = vc;
+    popover.animates = YES;
+    
+    [popover showRelativeToRect:NSZeroRect
+                         ofView:sender
+                  preferredEdge:NSMinYEdge];
 }
 
 #pragma mark - UI Drawing
@@ -146,7 +167,8 @@
     self.uiPauseButton.enabled = NO;
     
     self.uiPauseButton.target = self.uiPlayButton.target = self.uiForwardButton.target =
-    self.uiRewindButton.target = self.uiVolumeSlider.target = self.uiProgressSlider.target = self;
+    self.uiRewindButton.target = self.uiVolumeSlider.target = self.uiProgressSlider.target =
+    self.uiQueueButton.target = self;
     
     self.uiPauseButton.action = @selector(pause);
     self.uiPlayButton.action = @selector(play);
@@ -155,6 +177,8 @@
     
     self.uiProgressSlider.action = @selector(uiProgressChangeRequested:);
     self.uiVolumeSlider.action = @selector(uiVolumeChangeRequested:);
+    
+    self.uiQueueButton.action = @selector(uiOpenQueue:);
     
     [self startUpdates];
 }

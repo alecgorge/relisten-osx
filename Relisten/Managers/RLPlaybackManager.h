@@ -28,6 +28,8 @@
 
 // an array of AGMediaItems
 @property (nonatomic) NSMutableArray *playbackQueue;
+@property (nonatomic, readonly) NSArray *upcomingQueue;
+
 @property (nonatomic, readonly) AGMediaItem *currentItem;
 @property (nonatomic, readonly) AGMediaItem *nextItem;
 @property (nonatomic, readonly) NSInteger nextIndex;
