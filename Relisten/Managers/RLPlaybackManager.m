@@ -9,6 +9,7 @@
 #import "RLPlaybackManager.h"
 
 #import <StreamingKit/STKAutoRecoveringHTTPDataSource.h>
+#import <LastFm/LastFm.h>
 
 #import "IGDurationHelper.h"
 #import "RLQueueViewController.h"
@@ -33,6 +34,8 @@
 @property (nonatomic, readonly) NSSlider *uiVolumeSlider;
 
 @property (nonatomic, readonly) NSButton *uiQueueButton;
+
+@property (nonatomic) BOOL currentTrackHasBeenScrobbled;
 
 @end
 
@@ -205,17 +208,15 @@
         self.uiSubTitleLabel.stringValue = self.currentItem.displaySubText;
     }
     
-//	if(!self.currentTrackHasBeenScrobbled && self.progress > .5) {
-//        if (IGThirdPartyKeys.sharedInstance.isLastFmEnabled) {
-//            [[LastFm sharedInstance] sendScrobbledTrack:self.currentItem.title
-//                                               byArtist:self.currentItem.artist
-//                                                onAlbum:self.currentItem.album
-//                                           withDuration:self.audioPlayer.duration
-//                                            atTimestamp:(int)[[NSDate date] timeIntervalSince1970]
-//                                         successHandler:nil
-//                                         failureHandler:nil];
-//        }
-//        
+	if(!self.currentTrackHasBeenScrobbled && self.progress > .5) {
+        [[LastFm sharedInstance] sendScrobbledTrack:self.currentItem.title
+                                           byArtist:self.currentItem.artist
+                                            onAlbum:self.currentItem.album
+                                       withDuration:self.audioPlayer.duration
+                                        atTimestamp:(int)[[NSDate date] timeIntervalSince1970]
+                                     successHandler:nil
+                                     failureHandler:nil];
+        
 //        [IGEvents trackEvent:@"played_track"
 //              withAttributes:@{@"provider": NSStringFromClass(self.currentItem.class),
 //                               @"title": self.currentItem.title,
@@ -224,9 +225,9 @@
 //                               @"artist": self.currentItem.artist}
 //                  andMetrics:@{@"duration": [NSNumber numberWithFloat:self.duration],
 //                               @"is_cached": [NSNumber numberWithBool:self.currentItem.isCached]}];
-//        
-//		self.currentTrackHasBeenScrobbled = YES;
-//    }
+        
+		self.currentTrackHasBeenScrobbled = YES;
+    }
 }
 
 - (void)startUpdates {
@@ -327,14 +328,14 @@
         }
     }
     
-//    self.currentTrackHasBeenScrobbled = NO;
-//    
-//    [LastFm.sharedInstance sendNowPlayingTrack:self.currentItem.title
-//									  byArtist:self.currentItem.artist
-//									   onAlbum:self.currentItem.album
-//								  withDuration:self.audioPlayer.duration
-//								successHandler:nil
-//								failureHandler:nil];
+    self.currentTrackHasBeenScrobbled = NO;
+    
+    [LastFm.sharedInstance sendNowPlayingTrack:self.currentItem.title
+									  byArtist:self.currentItem.artist
+									   onAlbum:self.currentItem.album
+								  withDuration:self.audioPlayer.duration
+								successHandler:nil
+								failureHandler:nil];
     
     [self redrawUI];
 }

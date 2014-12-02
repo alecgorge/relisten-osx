@@ -15,6 +15,7 @@
         <customObject id="Voe-Tx-rLC" customClass="RLAppDelegate">
             <connections>
                 <outlet property="uiArtistsDropdown" destination="5nj-9O-uZG" id="vgj-MM-ZZU"/>
+                <outlet property="uiLastFmButton" destination="6lq-5p-IYq" id="t31-LZ-zo6"/>
                 <outlet property="uiLoadingIndicator" destination="x9G-Db-f4f" id="8uc-o8-PTZ"/>
                 <outlet property="uiPlaybackControlsView" destination="0Cj-Ed-xw8" id="Gma-j2-5ew"/>
                 <outlet property="uiShowTable" destination="pVJ-DM-hvk" id="rSQ-VZ-eM3"/>
@@ -1125,11 +1126,28 @@
                             </connections>
                         </button>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="CEEDB992-3952-484D-AC36-C090DA0DBE6E" label="Last.FM" paletteLabel="Last.FM" image="grey last fm" id="pra-OS-4sj">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="27" height="17"/>
+                        <size key="maxSize" width="27" height="38"/>
+                        <button key="view" id="6lq-5p-IYq">
+                            <rect key="frame" x="25" y="21" width="27" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="grey last fm" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="ohr-eY-az0">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="uiLastFm:" target="Voe-Tx-rLC" id="9J2-dR-I7p"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="ptp-JM-KG6"/>
                     <toolbarItem reference="6rz-bG-ZVQ"/>
                     <toolbarItem reference="W6W-5Z-y6J"/>
+                    <toolbarItem reference="pra-OS-4sj"/>
                     <toolbarItem reference="mhU-BT-OzB"/>
                     <toolbarItem reference="5ET-Pz-7Wm"/>
                 </defaultToolbarItems>
@@ -1143,5 +1161,6 @@
         <image name="Play" width="16" height="18"/>
         <image name="Playlist" width="20" height="14"/>
         <image name="Rewind" width="23" height="18"/>
+        <image name="grey last fm" width="16" height="16"/>
     </resources>
 </document>

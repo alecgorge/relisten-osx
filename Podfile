@@ -8,4 +8,5 @@ target "Relisten" do
 	pod 'CocoaLumberjack', '2.0.0-beta'
 	pod 'ReactiveCocoa', '~> 2.3'
 	pod 'StreamingKit', '~> 0.1'
+    pod 'LastFm', '~> 1.15'
 end

@@ -14,9 +14,11 @@
 #import "RLYearTableDataSource.h"
 #import "RLShowTableDataSource.h"
 #import "RLPlaybackManager.h"
+#import "RLLastFMWindowController.h"
 #import "RLSourceDropdownManager.h"
 
 #import <WebKit/WebKit.h>
+#import <LastFm/LastFm.h>
 
 @interface RLAppDelegate ()
 
@@ -28,6 +30,7 @@
 @property (weak) IBOutlet NSView *uiPlaybackControlsView;
 @property (weak) IBOutlet NSPopUpButton *uiSourcesDropdown;
 @property (weak) IBOutlet NSButton *uiSourceInfoButton;
+@property (weak) IBOutlet NSButton *uiLastFmButton;
 
 @property (nonatomic, strong) RLYearsTableDataSource *yearsDataSourceDelegate;
 @property (nonatomic, strong) RLYearTableDataSource *showsDataSourceDelegate;
@@ -42,6 +45,13 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [DDLog addLogger:DDASLLogger.sharedInstance];
     [DDLog addLogger:DDTTYLogger.sharedInstance];
+    
+    [LastFm sharedInstance].apiKey = @"fdb33798836426ae4c2a6a2ff6d39510";
+    [LastFm sharedInstance].apiSecret = @"ae4a4689916c6b378458009149c1550f";
+    [LastFm sharedInstance].session = [NSUserDefaults.standardUserDefaults stringForKey:@"lastfm_session_key"];
+    [LastFm sharedInstance].username = [NSUserDefaults.standardUserDefaults stringForKey:@"lastfm_username_key"];
+    
+    [self fixLastFmButton];
     
     [AFNetworkActivityIndicatorManager sharedManagerForProgressIndicator:self.uiLoadingIndicator].enabled = YES;
     
@@ -98,6 +108,22 @@
     [self.artistsManager refresh];
 }
 
+- (void)fixLastFmButton {
+    if([LastFm sharedInstance].username) {
+        self.uiLastFmButton.image = [NSImage imageNamed:@"last fm"];
+    }
+    else {
+        self.uiLastFmButton.image = [NSImage imageNamed:@"grey last fm"];
+    }
+}
+
+- (void)didEndSheet:(NSWindow *)sheet
+         returnCode:(NSInteger)returnCode
+        contextInfo:(void *)contextInfo {
+    [self fixLastFmButton];
+    [sheet orderOut:self];
+}
+
 - (IBAction)viewSourceInfo:(NSButton *)sender {
     NSPopover *popover = NSPopover.alloc.init;
     NSViewController *vc = NSViewController.alloc.init;
@@ -116,6 +142,15 @@
     [popover showRelativeToRect:NSZeroRect
                          ofView:sender
                   preferredEdge:NSMaxYEdge];
+}
+
+- (IBAction)uiLastFm:(id)sender {
+    RLLastFMWindowController *wc = [RLLastFMWindowController.alloc initWithWindowNibName:NSStringFromClass(RLLastFMWindowController.class)];
+    
+    [self.window beginSheet:wc.window
+          completionHandler:^(NSModalResponse returnCode) {
+              [self fixLastFmButton];
+          }];
 }
 
 @end

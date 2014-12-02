@@ -37,6 +37,8 @@
 		7C4C304F19B7521500EEAE6A /* IGArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C304E19B7521500EEAE6A /* IGArtist.m */; };
 		7C4C305319B76F6B00EEAE6A /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C305219B76F6B00EEAE6A /* AFNetworkActivityIndicatorManager.m */; };
 		7C4C305719B7723A00EEAE6A /* RLYearsTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C305619B7723A00EEAE6A /* RLYearsTableDataSource.m */; };
+		7C86C21E1A2E58DC00CFB178 /* RLLastFMWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C86C21C1A2E58DC00CFB178 /* RLLastFMWindowController.m */; };
+		7C86C21F1A2E58DC00CFB178 /* RLLastFMWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C86C21D1A2E58DC00CFB178 /* RLLastFMWindowController.xib */; };
 		7CA52A531A1A79F2002F34A6 /* RLQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA52A511A1A79F2002F34A6 /* RLQueueViewController.m */; };
 		7CA52A541A1A79F2002F34A6 /* RLQueueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52A521A1A79F2002F34A6 /* RLQueueViewController.xib */; };
 		7CA52A561A1A7F08002F34A6 /* RLQueueRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA52A551A1A7F08002F34A6 /* RLQueueRowView.xib */; };
@@ -114,6 +116,9 @@
 		7C4C305519B7723A00EEAE6A /* RLYearsTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLYearsTableDataSource.h; sourceTree = "<group>"; };
 		7C4C305619B7723A00EEAE6A /* RLYearsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLYearsTableDataSource.m; sourceTree = "<group>"; };
 		7C52711319C08CC20042696A /* Relisten-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Relisten-Bridging-Header.h"; sourceTree = "<group>"; };
+		7C86C21B1A2E58DC00CFB178 /* RLLastFMWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLLastFMWindowController.h; path = LastFM/RLLastFMWindowController.h; sourceTree = "<group>"; };
+		7C86C21C1A2E58DC00CFB178 /* RLLastFMWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLLastFMWindowController.m; path = LastFM/RLLastFMWindowController.m; sourceTree = "<group>"; };
+		7C86C21D1A2E58DC00CFB178 /* RLLastFMWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RLLastFMWindowController.xib; path = LastFM/RLLastFMWindowController.xib; sourceTree = "<group>"; };
 		7CA52A501A1A79F2002F34A6 /* RLQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLQueueViewController.h; sourceTree = "<group>"; };
 		7CA52A511A1A79F2002F34A6 /* RLQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLQueueViewController.m; sourceTree = "<group>"; };
 		7CA52A521A1A79F2002F34A6 /* RLQueueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RLQueueViewController.xib; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 		7C4C300519B6E09B00EEAE6A /* Relisten */ = {
 			isa = PBXGroup;
 			children = (
+				7C86C21A1A2E58C000CFB178 /* LastFM */,
 				7CA52A501A1A79F2002F34A6 /* RLQueueViewController.h */,
 				7CA52A511A1A79F2002F34A6 /* RLQueueViewController.m */,
 				7CA52A521A1A79F2002F34A6 /* RLQueueViewController.xib */,
@@ -319,6 +325,16 @@
 			path = "Column Datasources";
 			sourceTree = "<group>";
 		};
+		7C86C21A1A2E58C000CFB178 /* LastFM */ = {
+			isa = PBXGroup;
+			children = (
+				7C86C21B1A2E58DC00CFB178 /* RLLastFMWindowController.h */,
+				7C86C21C1A2E58DC00CFB178 /* RLLastFMWindowController.m */,
+				7C86C21D1A2E58DC00CFB178 /* RLLastFMWindowController.xib */,
+			);
+			name = LastFM;
+			sourceTree = "<group>";
+		};
 		9D6BC5B525AE9980E345B524 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +429,7 @@
 				7C2C44451A155E9700CCF20C /* source.html in Resources */,
 				7C4C301019B6E09B00EEAE6A /* Credits.rtf in Resources */,
 				7CA52A541A1A79F2002F34A6 /* RLQueueViewController.xib in Resources */,
+				7C86C21F1A2E58DC00CFB178 /* RLLastFMWindowController.xib in Resources */,
 				7C4C301619B6E09B00EEAE6A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +504,7 @@
 				7CE67A4A19F040360035E56D /* RLSourceDropdownManager.m in Sources */,
 				7C4C300C19B6E09B00EEAE6A /* main.m in Sources */,
 				7C27471619B7BAE30041D3E7 /* AGMediaItem.m in Sources */,
+				7C86C21E1A2E58DC00CFB178 /* RLLastFMWindowController.m in Sources */,
 				7C27471B19B7C0D50041D3E7 /* IGMediaItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
