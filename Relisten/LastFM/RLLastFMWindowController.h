@@ -10,4 +10,6 @@
 
 @interface RLLastFMWindowController : NSWindowController
 
+- (instancetype)initWithParentWindow:(NSWindow *)window;
+
 @end

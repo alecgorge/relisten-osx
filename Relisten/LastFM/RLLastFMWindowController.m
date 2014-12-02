@@ -15,14 +15,31 @@
 @property (weak) IBOutlet NSTextField *uiUsernameField;
 @property (weak) IBOutlet NSSecureTextField *uiPasswordField;
 @property (weak) IBOutlet NSButton *uiSignInButton;
+@property (weak) IBOutlet NSButton *uiCancelButton;
+
+@property (nonatomic) NSWindow *parentWindow;
 
 @end
 
 @implementation RLLastFMWindowController
 
+- (instancetype)initWithParentWindow:(NSWindow *)window {
+	if (self = [super initWithWindowNibName:NSStringFromClass(RLLastFMWindowController.class)]) {
+		self.parentWindow = window;
+	}
+	
+	return self;
+}
+
 - (void)windowDidLoad {
     [super windowDidLoad];
-    
+	
+	self.uiSignInButton.target = self;
+	self.uiSignInButton.action = @selector(uiSignIn:);
+	
+	self.uiCancelButton.target = self;
+	self.uiCancelButton.action = @selector(uiCancel:);
+	
     if (LastFm.sharedInstance.username) {
         self.uiUsernameField.stringValue = LastFm.sharedInstance.username;
         
@@ -31,7 +48,7 @@
 }
 
 - (IBAction)uiCancel:(id)sender {
-    [NSApp endSheet:self.window];
+	[self.parentWindow endSheet:self.window];
 }
 
 - (IBAction)uiSignIn:(id)sender {
@@ -57,10 +74,11 @@
                                     [LastFm sharedInstance].session = result[@"key"];
                                     [LastFm sharedInstance].username = result[@"name"];
                                     
-                                    [NSApp endSheet:self.window];
+									[self uiCancel:self];
                                 }
                                 failureHandler:^(NSError *error) {
-                                    NSLog(@"Failure: %@", [error localizedDescription]);
+									NSAlert *a = [NSAlert alertWithError:error];
+									[a runModal];
                                 }];
 }
 

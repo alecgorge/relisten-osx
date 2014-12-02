@@ -145,11 +145,14 @@
 }
 
 - (IBAction)uiLastFm:(id)sender {
-    RLLastFMWindowController *wc = [RLLastFMWindowController.alloc initWithWindowNibName:NSStringFromClass(RLLastFMWindowController.class)];
+	static RLLastFMWindowController *wc;
+ 
+	wc = [RLLastFMWindowController.alloc initWithParentWindow:self.window];
     
     [self.window beginSheet:wc.window
           completionHandler:^(NSModalResponse returnCode) {
               [self fixLastFmButton];
+			  [wc.window orderOut:self];
           }];
 }
 
